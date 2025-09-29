@@ -53,7 +53,7 @@ interface PremiumStore {
   
   // Actions
   setPremiumStatus: (status: boolean) => void
-  updatePremiumQuizData: (data: ExtendedQuizData) => void
+  updatePremiumQuizData: (data: ExtendedQuizData | null) => void
   updateAnalyticsData: (data: AnalyticsData) => void
   setShowPremiumPreview: (show: boolean) => void
   setHasCompletedBasicQuiz: (completed: boolean) => void
@@ -106,7 +106,7 @@ export const usePremiumStore = create<PremiumStore>()(
         }
       },
 
-      updatePremiumQuizData: (data: ExtendedQuizData) => {
+      updatePremiumQuizData: (data: ExtendedQuizData | null) => {
         set({ premiumQuizData: data })
       },
 
